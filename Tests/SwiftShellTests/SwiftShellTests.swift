@@ -6,7 +6,8 @@ final class SwiftShellTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(SwiftShell().text, "Hello, World!")
+        let shell = SwiftShell(isDispatch: false)
+        XCTAssertEqual(shell.shell("ls"), 0)
     }
 
     static var allTests = [
